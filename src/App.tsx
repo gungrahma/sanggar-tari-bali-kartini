@@ -1,19 +1,16 @@
-import { useState } from "react";
+import StoryPage from "./StoryPage";
+import ClassesPage from "./ClassesPage";
+import { SiteFooter, SiteHeader } from "./SiteChrome";
+
+const WHATSAPP_ENQUIRY_URL = `https://wa.me/?text=${encodeURIComponent(
+  "Hello! I’d like to learn more about Sanggar Tari Bali Kartini’s classes.",
+)}`;
 
 const ArrowUpRight = () => (
   <svg aria-hidden="true" viewBox="0 0 20 20" fill="none">
     <path d="M5 15 15 5M6 5h9v9" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 );
-
-function BrandMark() {
-  return (
-    <svg aria-hidden="true" className="brand-mark" viewBox="0 0 40 40" fill="none">
-      <circle cx="20" cy="20" r="19" fill="currentColor" />
-      <path d="M20 6c1 3.3 3 5.1 6.2 5.1-1.8 1.7-2.6 3.5-2.3 5.4 2.9-1.9 6-1.7 9.2.7-4.1.9-6.3 2.7-6.7 5.3 3-.5 5.3.3 6.9 2.4-3.6-.3-6.2.8-7.7 3.1 2.7.5 4.4 2 5.2 4.5-3.5-1.7-7-1.9-10.4-.8-3.4-1.1-6.9-.9-10.4.8.8-2.5 2.5-4 5.2-4.5-1.5-2.3-4.1-3.4-7.7-3.1 1.6-2.1 3.9-2.9 6.9-2.4-.4-2.6-2.6-4.4-6.7-5.3 3.2-2.4 6.3-2.6 9.2-.7.3-1.9-.5-3.7-2.3-5.4C17 11.1 19 9.3 20 6Z" fill="#f7e9be" />
-    </svg>
-  );
-}
 
 function DancerArtwork() {
   return (
@@ -76,46 +73,24 @@ function DancerArtwork() {
 }
 
 function App() {
-  const [menuOpen, setMenuOpen] = useState(false);
-
-  const closeMenu = () => setMenuOpen(false);
+  const path = window.location.pathname.replace(/\/+$/, "");
+  const isStoryPage = path === "/story";
+  const isClassesPage = path === "/classes";
 
   return (
     <>
       <a className="skip-link" href="#main">Skip to content</a>
-      <header className="site-header">
-        <div className="header-inner">
-          <a className="brand" href="#home" aria-label="Sanggar Tari Bali Kartini home" onClick={closeMenu}>
-            <BrandMark />
-            <span className="brand-name">Sanggar Tari<br /><strong>Bali Kartini</strong></span>
-          </a>
-          <button
-            className="menu-toggle"
-            type="button"
-            aria-expanded={menuOpen}
-            aria-controls="primary-navigation"
-            onClick={() => setMenuOpen((open) => !open)}
-          >
-            <span>{menuOpen ? "Close" : "Menu"}</span>
-            <span aria-hidden="true" className={`menu-icon${menuOpen ? " is-open" : ""}`}><i /><i /></span>
-          </button>
-          <nav id="primary-navigation" className={`primary-nav${menuOpen ? " is-open" : ""}`} aria-label="Main navigation">
-            <a href="#story" onClick={closeMenu}>Our story</a>
-            <a href="#classes" onClick={closeMenu}>Classes</a>
-            <a className="nav-cta" href="#contact" onClick={closeMenu}>Get in touch <ArrowUpRight /></a>
-          </nav>
-        </div>
-      </header>
+      <SiteHeader />
 
-      <main id="main">
+      {isStoryPage ? <StoryPage /> : isClassesPage ? <ClassesPage /> : <main id="main">
         <section className="hero section-shell" id="home" aria-labelledby="hero-title">
           <div className="hero-copy">
             <p className="eyebrow"><span className="eyebrow-star" aria-hidden="true">✳</span> A living tradition, since 1960</p>
             <h1 id="hero-title">A story told<br />one <span>step</span> at a time.</h1>
             <p className="hero-description">Find your rhythm in the expressive world of Balinese dance. Learn in person, move with intention, and carry a beautiful tradition forward.</p>
             <div className="hero-actions">
-              <a className="button button-dark" href="#classes">Explore our classes <ArrowUpRight /></a>
-              <a className="text-link" href="#story">Get to know us <span aria-hidden="true">↓</span></a>
+              <a className="button button-dark" href="/classes">Explore our classes <ArrowUpRight /></a>
+              <a className="text-link" href="/story">Get to know us <span aria-hidden="true">↗</span></a>
             </div>
             <div className="hero-note">
               <span className="note-line" />
@@ -156,7 +131,7 @@ function App() {
             <div className="story-body">
               <p className="story-lead">Sanggar Tari Bali Kartini has been a place to learn Balinese dance since 1960.</p>
               <p>Every gesture has a story. Every movement asks us to listen, observe, and express. Come as you are and discover a practice shaped by rhythm, presence, and the joy of learning together.</p>
-              <a className="text-link story-link" href="#classes">Find your way into dance <span aria-hidden="true">↓</span></a>
+              <a className="text-link story-link" href="/story">Read our story <span aria-hidden="true">↗</span></a>
             </div>
           </div>
           <div className="story-bottom">
@@ -174,7 +149,7 @@ function App() {
                 <p className="eyebrow eyebrow-light">Learn in person</p>
                 <h2 id="classes-title">Your first step<br />starts <em>here.</em></h2>
               </div>
-              <p>Choose the way you’d like to learn. Both options are held offline; details can be shared when you get in touch.</p>
+              <p>Explore the class options and ask the studio for details about the way you’d like to learn.</p>
             </div>
             <div className="class-cards">
               <article className="class-card class-card-regular">
@@ -206,6 +181,47 @@ function App() {
                   <a className="card-link" href="#contact">Ask about private class <ArrowUpRight /></a>
                 </div>
               </article>
+              <article className="class-card class-card-makeup">
+                <div className="card-topline"><span>03 / MAKEUP</span><span className="card-spark" aria-hidden="true">✳</span></div>
+                <div className="card-illustration makeup-illustration" aria-hidden="true">
+                  <span className="makeup-orbit makeup-orbit-one" />
+                  <span className="makeup-orbit makeup-orbit-two" />
+                  <span className="makeup-palette"><i /><i /><i /><i /></span>
+                  <span className="group-caption">A new<br />way to explore</span>
+                </div>
+                <div className="card-copy">
+                  <p className="card-label">NEW CLASS</p>
+                  <h3>Makeup class</h3>
+                  <p>Ask the studio about the Makeup Class and available details.</p>
+                  <a className="card-link" href="#contact">Ask about makeup class <ArrowUpRight /></a>
+                </div>
+              </article>
+              <article className="class-card class-card-explore">
+                <div className="card-topline"><span>04 / KEEP EXPLORING</span><span className="card-spark" aria-hidden="true">✳</span></div>
+                <div className="card-illustration explore-illustration" aria-hidden="true">
+                  <span className="explore-sun" />
+                  <span className="explore-ring explore-ring-one" />
+                  <span className="explore-ring explore-ring-two" />
+                  <span className="explore-spark explore-spark-one">✳</span>
+                  <span className="explore-spark explore-spark-two">✳</span>
+                  <span className="group-caption">There’s more<br />to discover</span>
+                </div>
+                <div className="card-copy">
+                  <p className="card-label">LET’S TALK</p>
+                  <h3>Explore more</h3>
+                  <p>Open WhatsApp with a ready-to-send message about the classes.</p>
+                  <a
+                    className="card-link"
+                    href={WHATSAPP_ENQUIRY_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Contact us on WhatsApp (opens in a new tab)"
+                  >
+                    Contact us on WhatsApp <ArrowUpRight />
+                  </a>
+                  <p className="explore-note">A direct studio chat link can be added when its WhatsApp number is available.</p>
+                </div>
+              </article>
             </div>
             <p className="classes-footnote"><span aria-hidden="true">✳</span> Class availability, schedules, and fees can be discussed directly with the studio.</p>
           </div>
@@ -218,7 +234,7 @@ function App() {
             <div className="contact-content">
               <p className="eyebrow">Your next chapter</p>
               <h2 id="contact-title">Curiosity looks<br /><em>good</em> on you.</h2>
-              <p className="contact-description">Interested in a regular or private class? We’d love to help you take the first step.</p>
+              <p className="contact-description">Interested in a regular, private, or makeup class? We’d love to help you take the first step.</p>
               <div className="contact-detail">
                 <span className="contact-icon" aria-hidden="true">↗</span>
                 <div><strong>Class enquiries</strong><p>The studio’s preferred contact details haven’t been provided yet.</p></div>
@@ -232,19 +248,8 @@ function App() {
           </div>
           <p className="contact-note">Official booking details can be added here when they’re available.</p>
         </section>
-      </main>
-
-      <footer className="site-footer">
-        <div className="footer-inner">
-          <a className="brand footer-brand" href="#home">
-            <BrandMark />
-            <span className="brand-name">Sanggar Tari<br /><strong>Bali Kartini</strong></span>
-          </a>
-          <p>Dance, passed on with care.</p>
-          <a className="back-top" href="#home">Back to top <span aria-hidden="true">↑</span></a>
-          <span className="footer-year">EST. 1960</span>
-        </div>
-      </footer>
+      </main>}
+      <SiteFooter />
     </>
   );
 }
