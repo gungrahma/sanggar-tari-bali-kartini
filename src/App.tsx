@@ -26,131 +26,110 @@ function App() {
       {isStoryPage ? <StoryPage /> : isClassesPage ? <ClassesPage /> : <main id="main">
         <section className="hero section-shell" id="home" aria-labelledby="hero-title">
           <div className="hero-copy">
-            <p className="eyebrow"><span className="eyebrow-star" aria-hidden="true">✳</span> A living tradition, since 1960</p>
-            <h1 id="hero-title">A story told<br />one <span>step</span> at a time.</h1>
-            <p className="hero-description">Find your rhythm in the expressive world of Balinese dance. Learn in person, move with intention, and carry a beautiful tradition forward.</p>
+            <p className="eyebrow"><span className="eyebrow-star" aria-hidden="true"></span> 1980 Hingga sekarang</p>
+            <h1 id="hero-title">Sanggar Tari Bali Kartini</h1>
+            <p className="hero-description">Sanggar seni yang legendaris hingga mencetak 3000+ lulusan terbaik! Diajarkan oleh tutor professional dengan beberapa kelas yang bisa dipilih! </p>
             <div className="hero-actions">
-              <a className="button button-dark" href="/classes">Explore our classes <ArrowUpRight /></a>
-              <a className="text-link" href="/story">Get to know us <span aria-hidden="true">↗</span></a>
-            </div>
-            <div className="hero-note">
-              <span className="note-line" />
-              <p>For curious beginners<br />and returning dancers alike</p>
+              <a className="button button-dark" href="/classes">Kelas kami <ArrowUpRight /></a>
+              <a className="text-link" href="/hero">Mengenal lebih jauh <span aria-hidden="true">↗</span></a>
             </div>
           </div>
           <div className="hero-art-wrap">
-            <div className="art-stamp" role="img" aria-label="Dance with meaning, since 1960">
-              <svg viewBox="0 0 100 100" aria-hidden="true">
-                <defs><path id="stamp-circle" d="M50,50 m-35,0 a35,35 0 1,1 70,0 a35,35 0 1,1 -70,0" /></defs>
-                <text><textPath href="#stamp-circle">DANCE WITH MEANING · SINCE 1960 · </textPath></text>
-              </svg>
-              <span aria-hidden="true">✳</span>
-            </div>
             <img className="dancer-art" src={dancerArtwork} alt="A colorful illustration of a Balinese dancer in a golden headdress and coral-red costume." />
-            <span className="art-caption">Grace. Story. Connection.</span>
           </div>
-          <a className="scroll-cue" href="#story"><span aria-hidden="true">↓</span> Scroll to discover</a>
         </section>
 
         <div className="marquee" aria-hidden="true">
           <div className="marquee-track" aria-hidden="true">
             {[0, 1].map((copy) => (
               <span className="marquee-content" key={copy}>
-                <span>Move with meaning</span><i>✳</i><span>Learn together</span><i>✳</i><span>Carry tradition forward</span><i>✳</i>
+                <span>Sejak 1980</span><i>✳</i><span>Kelas tari bali</span><i>✳</i><span>Bersama melestarikan tari bali</span><i>✳</i>
               </span>
             ))}
           </div>
         </div>
 
         <section className="story section-shell" id="story" aria-labelledby="story-title">
-          <div className="section-kicker"><span>01</span><span className="kicker-rule" /><span>THE STUDIO</span></div>
+          <div className="section-kicker"><span>01</span><span>TENTANG KAMI</span></div>
           <div className="story-grid">
             <div className="story-heading">
-              <p className="eyebrow">A heritage in motion</p>
-              <h2 id="story-title">Some stories<br />are <em>felt</em>, not told.</h2>
+              <p className="eyebrow">Dimulai dari dua penari profesional</p>
+              <h2 id="story-title">Pelestarian<br />dan <em>kesuksesan</em>.</h2>
             </div>
             <div className="story-body">
-              <p className="story-lead">Sanggar Tari Bali Kartini has been a place to learn Balinese dance since 1960.</p>
+              <p className="story-lead">Memiliki 3000+ alumnus yang sudah sukses, Sanggar Tari Bali Kartini sudah dikenal dari 1980 hingga sekarang.</p>
               <p>Every gesture has a story. Every movement asks us to listen, observe, and express. Come as you are and discover a practice shaped by rhythm, presence, and the joy of learning together.</p>
-              <a className="text-link story-link" href="/story">Read our story <span aria-hidden="true">↗</span></a>
+              <a className="text-link story-link" href="/story">Baca kisah kami <span aria-hidden="true">↗</span></a>
             </div>
-          </div>
-          <div className="story-bottom">
-            <span className="story-year">1960<span>—</span></span>
-            <p>More than a starting point.<br />A tradition still in motion.</p>
-            <div className="story-sun" aria-hidden="true"><span>✳</span></div>
           </div>
         </section>
 
         <section className="classes-section" id="classes" aria-labelledby="classes-title">
           <div className="classes-inner section-shell">
-            <div className="section-kicker section-kicker-light"><span>02</span><span className="kicker-rule" /><span>FIND YOUR RHYTHM</span></div>
+            <div className="section-kicker section-kicker-light"><span>02</span><span>KELAS KAMI</span></div>
             <div className="classes-intro">
               <div>
-                <p className="eyebrow eyebrow-light">Learn in person</p>
-                <h2 id="classes-title">Your first step<br />starts <em>here.</em></h2>
+                <p className="eyebrow eyebrow-light">Pilihan kelas kami</p>
+                <h2 id="classes-title">Dimulai dari langkah<br />awal <em>disini.</em></h2>
               </div>
-              <p>Explore the class options and ask the studio for details about the way you’d like to learn.</p>
+              <p>Temukan kelas yang paling sesuai dengan kebutuhan dan minat Anda.</p>
             </div>
             <div className="class-cards">
               <article className="class-card class-card-regular">
-                <div className="card-topline"><span>01 / TOGETHER</span><span className="card-spark" aria-hidden="true">✳</span></div>
+                <div className="card-topline"><span>01 / BELAJAR REGULER</span><span className="card-spark" aria-hidden="true"></span></div>
                 <div className="card-illustration regular-illustration" aria-hidden="true">
                   <span className="mini-orbit orbit-one" /><span className="mini-orbit orbit-two" />
                   <span className="figure-dot dot-one" /><span className="figure-dot dot-two" /><span className="figure-dot dot-three" />
-                  <span className="group-caption">A shared<br />practice</span>
                 </div>
                 <div className="card-copy">
-                  <p className="card-label">LEARN TOGETHER</p>
-                  <h3>Regular class</h3>
-                  <p>Build your practice alongside other learners in a welcoming group setting.</p>
-                  <a className="card-link" href="#contact">Ask about regular class <ArrowUpRight /></a>
+                  <h3>Kelas reguler</h3>
+                  <p>Belajar tari Bali bersama teman-teman dalam lingkungan yang mendukung. Kelas dimulai setiap hari sabtu dan minggu.</p>
+                  <a className="card-link" href="#contact">Tanya terkait kelas reguler <ArrowUpRight /></a>
                 </div>
               </article>
               <article className="class-card class-card-private">
-                <div className="card-topline"><span>02 / ONE TO ONE</span><span className="card-spark" aria-hidden="true">✳</span></div>
+                <div className="card-topline"><span>02 / PRIVAT</span><span className="card-spark" aria-hidden="true"></span></div>
                 <div className="card-illustration private-illustration" aria-hidden="true">
                   <span className="private-sun" />
                   <span className="private-orbit" />
                   <span className="private-figure"><i /><i /><i /><i /></span>
-                  <span className="group-caption">Space to<br />focus</span>
                 </div>
                 <div className="card-copy">
-                  <p className="card-label">YOUR OWN PACE</p>
-                  <h3>Private class</h3>
-                  <p>Explore the movements in a focused session shaped around your learning.</p>
-                  <a className="card-link" href="#contact">Ask about private class <ArrowUpRight /></a>
+                  <p className="card-label">LEBIH FOKUS TERHADAP PRIBADI</p>
+                  <h3>Kelas privat</h3>
+                  <p>Belajar tari Bali secara individu dengan fokus pada kebutuhan dan kemampuan pribadi Anda. Jadwal dapat disesuikan (flexible).</p>
+                  <a className="card-link" href="#contact">Tanya terkait kelas privat <ArrowUpRight /></a>
                 </div>
               </article>
               <article className="class-card class-card-makeup">
-                <div className="card-topline"><span>03 / MAKEUP</span><span className="card-spark" aria-hidden="true">✳</span></div>
+                <div className="card-topline"><span>03 / MAKEUP (BARU)</span><span className="card-spark" aria-hidden="true"></span></div>
                 <div className="card-illustration makeup-illustration" aria-hidden="true">
                   <span className="makeup-orbit makeup-orbit-one" />
                   <span className="makeup-orbit makeup-orbit-two" />
                   <span className="makeup-palette"><i /><i /><i /><i /></span>
-                  <span className="group-caption">A new<br />way to explore</span>
+                  <span className="group-caption">Kelas<br />terbaru dari kami!</span>
                 </div>
                 <div className="card-copy">
-                  <p className="card-label">NEW CLASS</p>
-                  <h3>Makeup class</h3>
-                  <p>Ask the studio about the Makeup Class and available details.</p>
-                  <a className="card-link" href="#contact">Ask about makeup class <ArrowUpRight /></a>
+                  <p className="card-label">PEMBELAJARAN BARU</p>
+                  <h3>Kelas Makeup</h3>
+                  <p>Belajar makeup (terkhususnya makeup tarian bali) secara berkelompok dengan fokus pada pengenalan karakter tari bali. Jadwal tersedia hari minggu.</p>
+                  <a className="card-link" href="#contact">Tanya terkait kelas makeup <ArrowUpRight /></a>
                 </div>
               </article>
               <article className="class-card class-card-explore">
-                <div className="card-topline"><span>04 / KEEP EXPLORING</span><span className="card-spark" aria-hidden="true">✳</span></div>
+                <div className="card-topline"><span>LEBIH JAUH LAGI</span><span className="card-spark" aria-hidden="true"></span></div>
                 <div className="card-illustration explore-illustration" aria-hidden="true">
                   <span className="explore-sun" />
                   <span className="explore-ring explore-ring-one" />
                   <span className="explore-ring explore-ring-two" />
                   <span className="explore-spark explore-spark-one">✳</span>
                   <span className="explore-spark explore-spark-two">✳</span>
-                  <span className="group-caption">There’s more<br />to discover</span>
+                  <span className="group-caption">Ada pertanyaan <br />lebih lanjut?</span>
                 </div>
                 <div className="card-copy">
-                  <p className="card-label">LET’S TALK</p>
-                  <h3>Explore more</h3>
-                  <p>Open WhatsApp with a ready-to-send message about the classes.</p>
+                  <p className="card-label">DISKUSI LEBIH LANJUT</p>
+                  <h3>Lebih lanjut</h3>
+                  <p>Mari berdiskusi lebih lanjut tentang kelas yang Anda minati lewat whatsapp!</p>
                   <a
                     className="card-link"
                     href={WHATSAPP_ENQUIRY_URL}
@@ -158,36 +137,27 @@ function App() {
                     rel="noopener noreferrer"
                     aria-label="Contact us on WhatsApp (opens in a new tab)"
                   >
-                    Contact us on WhatsApp <ArrowUpRight />
+                    Kontak kami di WhatsApp <ArrowUpRight />
                   </a>
-                  <p className="explore-note">A direct studio chat link can be added when its WhatsApp number is available.</p>
+                  <p className="explore-note">Jika tidak menerima pesan dari WhatsApp, bisa menghubungi email kami.</p>
                 </div>
               </article>
             </div>
-            <p className="classes-footnote"><span aria-hidden="true">✳</span> Class availability, schedules, and fees can be discussed directly with the studio.</p>
+            <p className="classes-footnote"><span aria-hidden="true"></span> Harga dan ketersediaan kelas dapat dibicarakan melalui kontak kami di WhatsApp.</p>
           </div>
         </section>
 
         <section className="contact section-shell" id="contact" aria-labelledby="contact-title">
-          <div className="section-kicker"><span>03</span><span className="kicker-rule" /><span>LET’S BEGIN</span></div>
+          <div className="section-kicker"><span>03</span><span>APAKAH SUDAH SIAP</span></div>
           <div className="contact-panel">
             <div className="contact-sun" aria-hidden="true"><span>✳</span></div>
             <div className="contact-content">
-              <p className="eyebrow">Your next chapter</p>
-              <h2 id="contact-title">Curiosity looks<br /><em>good</em> on you.</h2>
-              <p className="contact-description">Interested in a regular, private, or makeup class? We’d love to help you take the first step.</p>
-              <div className="contact-detail">
-                <span className="contact-icon" aria-hidden="true">↗</span>
-                <div><strong>Class enquiries</strong><p>The studio’s preferred contact details haven’t been provided yet.</p></div>
-              </div>
-            </div>
-            <div className="contact-side">
-              <span className="contact-asterisk" aria-hidden="true">✳</span>
-              <p>Every dancer<br />begins somewhere.</p>
-              <span className="contact-caption">SANGGAR TARI BALI KARTINI · SINCE 1960</span>
+              <p className="eyebrow">Dimulai dari anda!</p>
+              <h2 id="contact-title">Mari membangun<br /><em>Sanggar</em> bersama kami.</h2>
+              <p className="contact-description">Dengan adanya kelas-kelas yang kami sediakan, Anda bisa mulai menjalani perjalanan belajar tari Anda sekarang juga! Mari bersama bergabung membangun sanggar tari bali kartini bersama kami.</p>
             </div>
           </div>
-          <p className="contact-note">Official booking details can be added here when they’re available.</p>
+          <p className="contact-note">Kontak kami hanya ada di WhatsApp dan email. Harap gunakan salah satu dari kedua channel tersebut untuk menghubungi kami.</p>
         </section>
       </main>}
       <SiteFooter />
