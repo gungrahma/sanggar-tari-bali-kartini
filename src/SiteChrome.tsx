@@ -37,9 +37,9 @@ export function SiteHeader() {
           <span aria-hidden="true" className={`menu-icon${menuOpen ? " is-open" : ""}`}><i /><i /></span>
         </button>
         <nav id="primary-navigation" className={`primary-nav${menuOpen ? " is-open" : ""}`} aria-label="Main navigation">
-          <a href="/story" onClick={closeMenu}>Our story</a>
-          <a href="/classes" onClick={closeMenu}>Classes</a>
-          <a className="nav-cta" href="/#contact" onClick={closeMenu}>Get in touch <ArrowUpRight /></a>
+          <a href="/story" onClick={closeMenu}>Cerita kami</a>
+          <a href="/classes" onClick={closeMenu}>Kelas</a>
+          <a className="nav-cta" href="/hero" onClick={closeMenu}>Hubungi kami <ArrowUpRight /></a>
         </nav>
       </div>
     </header>
@@ -55,7 +55,6 @@ export function SiteFooter() {
           <span className="brand-name">Sanggar Tari<br /><strong>Bali Kartini</strong></span>
         </a>
         <p>Dance, passed on with care.</p>
-        <a className="back-top" href="/#home">Back to top <span aria-hidden="true">↑</span></a>
         <span className="footer-year">EST. 1960</span>
       </div>
     </footer>
