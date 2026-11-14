@@ -38,9 +38,38 @@ function StoryPage() {
         </div>
       </section>
 
+      <section className="story-coaches section-shell" aria-labelledby="story-coaches-title">
+        <div className="section-kicker"><span>02</span><span className="kicker-rule" /><span>THE TEACHERS</span></div>
+        <div className="story-coaches-heading">
+          <div>
+            <p className="eyebrow"><span className="eyebrow-star" aria-hidden="true">✳</span> Sang Maestro Tari</p>
+            <h2 id="story-coaches-title">Guided by those<br />who know the <em>dance.</em></h2>
+          </div>
+          <p>Meet the two coaches who guide students in their dance practice. Names and award details are placeholders until they’re ready to be shared.</p>
+        </div>
+        <div className="coach-grid">
+          {[1, 2].map((coach) => (
+            <article className={`coach-card coach-card-${coach}`} key={coach}>
+              <div className="coach-art" aria-hidden="true">
+                <span className="coach-art-orbit coach-art-orbit-one" />
+                <span className="coach-art-orbit coach-art-orbit-two" />
+                <span className="coach-art-sun" />
+                <span className="coach-art-number">0{coach}</span>
+                <span className="coach-art-spark">✳</span>
+              </div>
+              <div className="coach-card-copy">
+                <p className="card-label">DANCE COACH</p>
+                <h3>Coach 0{coach}</h3>
+                <p className="coach-award-placeholder">Award title · Year <span>Placeholder</span></p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
       <section className="story-values">
         <div className="story-values-inner section-shell">
-          <div className="section-kicker section-kicker-light"><span>02</span><span className="kicker-rule" /><span>THE PRACTICE</span></div>
+          <div className="section-kicker section-kicker-light"><span>03</span><span className="kicker-rule" /><span>THE PRACTICE</span></div>
           <div className="story-values-grid">
             <h2>Every journey<br />starts with <em>curiosity.</em></h2>
             <div className="story-value">
